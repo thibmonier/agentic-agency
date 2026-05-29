@@ -21,7 +21,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#offres"
+                  href="/services/developpement-web"
                   className="text-sm leading-6 text-gray-600 hover:text-[#1e3a5f] transition-colors"
                 >
                   Développement web
@@ -29,7 +29,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#offres"
+                  href="/services/applications-metier"
                   className="text-sm leading-6 text-gray-600 hover:text-[#1e3a5f] transition-colors"
                 >
                   Applications métier
@@ -37,10 +37,18 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#offres"
+                  href="/services/applications-mobiles"
                   className="text-sm leading-6 text-gray-600 hover:text-[#1e3a5f] transition-colors"
                 >
                   Applications mobiles
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/conseil"
+                  className="text-sm leading-6 text-gray-600 hover:text-[#1e3a5f] transition-colors"
+                >
+                  Conseil
                 </Link>
               </li>
             </ul>
@@ -60,7 +68,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/blog?category=process"
+                  href="/blog/category/process"
                   className="text-sm leading-6 text-gray-600 hover:text-[#1e3a5f] transition-colors"
                 >
                   Process
@@ -68,7 +76,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/blog?category=avis"
+                  href="/blog/category/avis"
                   className="text-sm leading-6 text-gray-600 hover:text-[#1e3a5f] transition-colors"
                 >
                   Avis
@@ -76,7 +84,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/blog?category=tests"
+                  href="/blog/category/tests"
                   className="text-sm leading-6 text-gray-600 hover:text-[#1e3a5f] transition-colors"
                 >
                   Tests

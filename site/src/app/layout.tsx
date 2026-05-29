@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { CookieBanner } from "@/components/cookie-banner";
 import "./globals.css";
 
 const inter = Inter({
@@ -33,6 +35,15 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CookieBanner />
+        {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
+          <Script
+            defer
+            data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
+            src="https://plausible.io/js/script.js"
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );

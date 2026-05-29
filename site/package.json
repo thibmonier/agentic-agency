@@ -11,7 +11,14 @@
     "format:check": "npx prettier --check \"src/**/*.{ts,tsx,css,md}\"",
     "test": "jest",
     "test:ci": "jest --ci --coverage",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "check": "npm run lint && npm run type-check && npm run format:check && npm run build",
+    "prepare": "cd .. && husky site/.husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,css,md}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
@@ -50,8 +57,10 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "husky": "^9.1.7",
     "jest": "^30.4.2",
     "jest-environment-jsdom": "^30.4.1",
+    "lint-staged": "^16.4.0",
     "prettier": "^3.8.3",
     "tailwindcss": "^4",
     "ts-node": "^10.9.2",

@@ -22,9 +22,7 @@ export function TrustSection() {
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#1e3a5f]/10 text-lg font-bold text-[#1e3a5f]">
                   {item.name.charAt(0)}
                 </div>
-                <p className="mt-3 text-sm font-semibold text-[#1e3a5f]">
-                  {item.name}
-                </p>
+                <p className="mt-3 text-sm font-semibold text-[#1e3a5f]">{item.name}</p>
               </div>
             ))}
           </div>

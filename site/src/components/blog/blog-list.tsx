@@ -16,9 +16,7 @@ export function BlogList({ posts }: BlogListProps) {
   const filteredPosts =
     activeCategory === "Tous"
       ? posts
-      : posts.filter(
-          (post) => post.category.toLowerCase() === activeCategory.toLowerCase()
-        );
+      : posts.filter((post) => post.category.toLowerCase() === activeCategory.toLowerCase());
 
   return (
     <>
@@ -40,9 +38,7 @@ export function BlogList({ posts }: BlogListProps) {
 
       {filteredPosts.length === 0 ? (
         <div className="mt-16 text-center">
-          <p className="text-lg text-gray-600">
-            Aucun article trouvé pour cette catégorie.
-          </p>
+          <p className="text-lg text-gray-600">Aucun article trouvé pour cette catégorie.</p>
         </div>
       ) : (
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">

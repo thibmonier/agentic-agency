@@ -13,32 +13,38 @@ export type OfferPillar = {
 export const offerPillars: OfferPillar[] = [
   {
     title: "Développement web",
-    description: "Sites vitrines, plateformes SaaS et portails métier avec les frameworks les plus robustes.",
+    description:
+      "Sites vitrines, plateformes SaaS et portails métier avec les frameworks les plus robustes.",
     offers: [
       {
         title: "Site vitrine & corporate",
-        description: "Un site performant, accessible et optimisé SEO qui reflète votre image de marque.",
+        description:
+          "Un site performant, accessible et optimisé SEO qui reflète votre image de marque.",
         href: "/services/developpement-web",
       },
       {
         title: "Plateforme SaaS",
-        description: "Architecture multi-tenant, scalable et sécurisée pour votre produit logiciel.",
+        description:
+          "Architecture multi-tenant, scalable et sécurisée pour votre produit logiciel.",
         href: "/services/developpement-web",
       },
     ],
   },
   {
     title: "Applications métier",
-    description: "Digitalisation de vos processus avec des applications sur mesure, robustes et évolutives.",
+    description:
+      "Digitalisation de vos processus avec des applications sur mesure, robustes et évolutives.",
     offers: [
       {
         title: "Application sur mesure",
-        description: "Un outil taillé pour vos processus, pas un template générique adapté à la marge.",
+        description:
+          "Un outil taillé pour vos processus, pas un template générique adapté à la marge.",
         href: "/services/applications-metier",
       },
       {
         title: "Évolution & dette technique",
-        description: "Reprise d'applications existantes, refactoring progressif et modernisation de stack.",
+        description:
+          "Reprise d'applications existantes, refactoring progressif et modernisation de stack.",
         href: "/services/applications-metier",
       },
       {
@@ -70,7 +76,8 @@ export const offerPillars: OfferPillar[] = [
     offers: [
       {
         title: "Audit & architecture",
-        description: "Diagnostic de votre SI, recommandations d'architecture et feuille de route technique.",
+        description:
+          "Diagnostic de votre SI, recommandations d'architecture et feuille de route technique.",
         href: "/services/conseil",
       },
       {

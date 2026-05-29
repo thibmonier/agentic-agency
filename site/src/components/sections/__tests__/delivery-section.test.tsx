@@ -19,12 +19,8 @@ describe("DeliverySection", () => {
 
   it("renders two paragraphs about agile delivery", () => {
     render(<DeliverySection />);
-    expect(
-      screen.getByText(/nous pratiquons l'agilité au quotidien/i)
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(/tests automatisés, revues de code/i)
-    ).toBeInTheDocument();
+    expect(screen.getByText(/nous pratiquons l'agilité au quotidien/i)).toBeInTheDocument();
+    expect(screen.getByText(/tests automatisés, revues de code/i)).toBeInTheDocument();
   });
 
   it("renders CTA link to blog with text containing 'expérience'", () => {
@@ -36,18 +32,10 @@ describe("DeliverySection", () => {
 
   it("renders 4 delivery steps", () => {
     render(<DeliverySection />);
-    expect(
-      screen.getByRole("heading", { level: 3, name: /sprint/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { level: 3, name: /review/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { level: 3, name: /deploy/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { level: 3, name: /monitor/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 3, name: /sprint/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 3, name: /review/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 3, name: /deploy/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 3, name: /monitor/i })).toBeInTheDocument();
   });
 
   it("renders step numbers 1-4", () => {

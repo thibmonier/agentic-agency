@@ -8,7 +8,8 @@ export const approachSteps: ApproachStep[] = [
   {
     number: 1,
     title: "Discovery",
-    description: "Cadrage du besoin, identification des personas et cartographie des processus métier.",
+    description:
+      "Cadrage du besoin, identification des personas et cartographie des processus métier.",
   },
   {
     number: 2,

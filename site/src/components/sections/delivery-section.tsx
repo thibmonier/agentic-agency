@@ -11,14 +11,12 @@ export function DeliverySection() {
               Le delivery moderne comme avantage
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Nous pratiquons l&apos;agilité au quotidien : cycles courts, intégration
-              continue et feedback rapide. Chaque sprint apporte de la valeur
-              mesurable à votre produit.
+              Nous pratiquons l&apos;agilité au quotidien : cycles courts, intégration continue et
+              feedback rapide. Chaque sprint apporte de la valeur mesurable à votre produit.
             </p>
             <p className="mt-4 text-lg leading-8 text-gray-600">
-              Tests automatisés, revues de code systématiques et démos de sprint
-              régulières garantissent la qualité et la transparence tout au long du
-              développement.
+              Tests automatisés, revues de code systématiques et démos de sprint régulières
+              garantissent la qualité et la transparence tout au long du développement.
             </p>
             <div className="mt-8">
               <Link
@@ -41,9 +39,7 @@ export function DeliverySection() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-[#1e3a5f]">Sprint</h3>
-                    <p className="text-sm text-gray-600">
-                      Développement itératif 2 semaines
-                    </p>
+                    <p className="text-sm text-gray-600">Développement itératif 2 semaines</p>
                   </div>
                 </div>
 
@@ -57,9 +53,7 @@ export function DeliverySection() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-[#1e3a5f]">Review</h3>
-                    <p className="text-sm text-gray-600">
-                      Démo et validation avec le métier
-                    </p>
+                    <p className="text-sm text-gray-600">Démo et validation avec le métier</p>
                   </div>
                 </div>
 
@@ -73,9 +67,7 @@ export function DeliverySection() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-[#1e3a5f]">Deploy</h3>
-                    <p className="text-sm text-gray-600">
-                      Livraison automatisée et continue
-                    </p>
+                    <p className="text-sm text-gray-600">Livraison automatisée et continue</p>
                   </div>
                 </div>
 
@@ -89,9 +81,7 @@ export function DeliverySection() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-[#1e3a5f]">Monitor</h3>
-                    <p className="text-sm text-gray-600">
-                      Surveillance et amélioration continue
-                    </p>
+                    <p className="text-sm text-gray-600">Surveillance et amélioration continue</p>
                   </div>
                 </div>
               </div>

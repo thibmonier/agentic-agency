@@ -9,9 +9,7 @@ describe("ApproachTimeline", () => {
 
   it("renders heading", () => {
     render(<ApproachTimeline />);
-    expect(
-      screen.getByRole("heading", { level: 2, name: /notre approche/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 2, name: /notre approche/i })).toBeInTheDocument();
   });
 
   it("renders 5 steps", () => {
@@ -23,7 +21,10 @@ describe("ApproachTimeline", () => {
     const conceptionHeadings = screen.getAllByRole("heading", { level: 3, name: /conception/i });
     expect(conceptionHeadings.length).toBeGreaterThanOrEqual(1);
 
-    const devHeadings = screen.getAllByRole("heading", { level: 3, name: /développement itératif/i });
+    const devHeadings = screen.getAllByRole("heading", {
+      level: 3,
+      name: /développement itératif/i,
+    });
     expect(devHeadings.length).toBeGreaterThanOrEqual(1);
 
     const recetteHeadings = screen.getAllByRole("heading", { level: 3, name: /recette/i });

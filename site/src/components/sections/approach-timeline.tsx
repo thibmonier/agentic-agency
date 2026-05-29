@@ -8,9 +8,7 @@ export function ApproachTimeline() {
           <h2 className="text-3xl font-bold tracking-tight text-[#1e3a5f] sm:text-4xl">
             Notre approche
           </h2>
-          <p className="mt-4 text-lg leading-8 text-gray-600">
-            Un processus éprouvé en 5 étapes
-          </p>
+          <p className="mt-4 text-lg leading-8 text-gray-600">Un processus éprouvé en 5 étapes</p>
         </div>
 
         {/* Desktop: Horizontal timeline */}
@@ -32,12 +30,8 @@ export function ApproachTimeline() {
 
                   {/* Content */}
                   <div className="mt-6 text-center">
-                    <h3 className="text-lg font-semibold text-[#1e3a5f]">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-gray-600">
-                      {step.description}
-                    </p>
+                    <h3 className="text-lg font-semibold text-[#1e3a5f]">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-gray-600">{step.description}</p>
                   </div>
                 </div>
               ))}
@@ -62,12 +56,8 @@ export function ApproachTimeline() {
 
                   {/* Content */}
                   <div className="flex-1 pt-1">
-                    <h3 className="text-lg font-semibold text-[#1e3a5f]">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-gray-600">
-                      {step.description}
-                    </p>
+                    <h3 className="text-lg font-semibold text-[#1e3a5f]">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-gray-600">{step.description}</p>
                   </div>
                 </div>
               ))}

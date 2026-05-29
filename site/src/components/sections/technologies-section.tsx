@@ -32,9 +32,7 @@ export function TechnologiesSection() {
                 {tech.name.charAt(0)}
               </div>
               <div className="text-center">
-                <div className="text-sm font-semibold text-[#1e3a5f]">
-                  {tech.name}
-                </div>
+                <div className="text-sm font-semibold text-[#1e3a5f]">{tech.name}</div>
                 <div className="mt-1 text-xs text-gray-500">v{tech.version}</div>
               </div>
             </div>

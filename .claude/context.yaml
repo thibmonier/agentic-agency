@@ -1,0 +1,155 @@
+# Claude-Craft Context Configuration
+# Auto-suggest skills based on file patterns (no auto-loading)
+
+file_contexts:
+  # PHP source files
+  "*.php":
+    suggest_skills:
+      - solid-principles
+      - kiss-dry-yagni
+    auto_load: false
+    quick_tips: |
+      Strict types required. Use PHP 8.3+ attributes.
+      Follow PSR-12 coding standards. Final classes by default.
+
+  # Test files
+  "*Test.php":
+    suggest_skills:
+      - testing
+    auto_load: false
+    quick_tips: |
+      TDD: RED -> GREEN -> REFACTOR
+      Use data providers, coverage >= 80%
+
+  "**/tests/**":
+    suggest_skills:
+      - testing
+    auto_load: false
+
+  # Controllers
+  "*Controller.php":
+    suggest_skills:
+      - security
+    auto_load: false
+    quick_tips: |
+      Thin controllers: delegate to handlers/services.
+      Use #[Route] attributes, validate input.
+
+  "**/Controller/**/*.php":
+    suggest_skills:
+      - security
+    auto_load: false
+
+  # Domain layer - Entities
+  "**/Domain/Entity/**/*.php":
+    suggest_skills:
+      - solid-principles
+    auto_load: false
+    quick_tips: |
+      Rich domain model. Encapsulate behavior.
+      Use value objects for identity and validation.
+
+  "**/Entity/**/*.php":
+    suggest_skills:
+      - solid-principles
+    auto_load: false
+
+  # Domain layer - Value Objects
+  "**/ValueObject/**/*.php":
+    suggest_skills:
+      - solid-principles
+    auto_load: false
+    quick_tips: |
+      Immutable. Validate in constructor.
+      Implement equals() for comparison.
+
+  # Domain layer - Repositories
+  "**/Repository/**/*.php":
+    suggest_skills:
+      - solid-principles
+    auto_load: false
+    quick_tips: |
+      Domain: interfaces only.
+      Infrastructure: Doctrine implementations.
+
+  # Application layer - Commands/Queries (CQRS)
+  "**/Command/**/*.php":
+    suggest_skills:
+      - solid-principles
+    auto_load: false
+    quick_tips: |
+      Commands: write operations, return void or ID.
+      Use Messenger for async processing.
+
+  "**/Query/**/*.php":
+    suggest_skills:
+      - solid-principles
+    auto_load: false
+    quick_tips: |
+      Queries: read operations, return DTOs.
+      Optimize for read performance.
+
+  # Infrastructure - Doctrine
+  "**/Persistence/**/*.php":
+    suggest_skills:
+      - solid-principles
+    auto_load: false
+    quick_tips: |
+      Implement domain repository interfaces.
+      Use QueryBuilder for complex queries.
+
+  # API Platform resources
+  "**/Api/**/*.php":
+    suggest_skills:
+      - security
+    auto_load: false
+    quick_tips: |
+      Use API Platform attributes.
+      Define security per operation.
+
+  # Messenger handlers
+  "**/Messenger/**/*.php":
+    suggest_skills:
+      - solid-principles
+    auto_load: false
+    quick_tips: |
+      One handler per message.
+      Handle failures gracefully.
+
+  # Configuration files
+  "*.yaml":
+    suggest_skills: []
+    auto_load: false
+    quick_tips: |
+      Use environment variables for secrets.
+      Validate service definitions.
+
+  "*.yml":
+    suggest_skills: []
+    auto_load: false
+
+  # Doctrine mappings
+  "**/config/doctrine/**/*.xml":
+    suggest_skills: []
+    auto_load: false
+    quick_tips: |
+      Prefer PHP 8 attributes over XML mappings.
+
+  # Docker files
+  "Dockerfile":
+    suggest_skills:
+      - security
+    auto_load: false
+    quick_tips: |
+      Multi-stage builds. Non-root user.
+      Use Hadolint for linting.
+
+  "docker-compose*.yml":
+    suggest_skills: []
+    auto_load: false
+
+  # Documentation
+  "*.md":
+    suggest_skills:
+      - documentation
+    auto_load: false

@@ -1,0 +1,68 @@
+project: agentic-agency
+description: "Site vitrine Agentic Agency — Next.js + TypeScript + Tailwind + MDX blog"
+track: enterprise
+complexity_score: 14
+initialized_at: "2026-05-29T09:45:00Z"
+upgraded_at: "2026-05-29T09:50:00Z"
+upgrade_reason: "Forcé via --entreprise"
+current_phase: implementation
+source_spec: "agentic-agency.md"
+
+stack:
+  framework: "Next.js 15.5.15+ (App Router)"
+  language: TypeScript
+  styles: Tailwind CSS 4
+  cms: "MDX + fichiers Git (pas de SaaS)"
+  email: "Resend (gratuit 100 emails/jour)"
+  hosting: "Cloudflare Pages (gratuit, EU edge, RGPD)"
+  analytics: "Plausible Cloud (9€/mois, cookieless, EU)"
+  cookies: "Tarteaucitron.js (open-source)"
+  ui_components: "Radix UI (headless, ARIA natif)"
+  animations: Framer Motion
+  tests_unit: Vitest
+  tests_e2e: Playwright
+  i18n: "next-intl (préparé Lot 2)"
+
+budget_annuel_estime: "~108€/an (Plausible uniquement)"
+
+phases:
+  analysis:
+    status: done
+    completed_at: "2026-05-29"
+    artifacts:
+      research_summary: "analysis/research-summary.md"
+      constraints: "analysis/constraints.md"
+      risks_opportunities: "analysis/risks-opportunities.md"
+      technical_options: "analysis/technical-options.md"
+    key_findings:
+      risk_score: "5.8/10 (Modéré)"
+      stack_recommendation: "Next.js 15 + MDX + Cloudflare Pages"
+      competitors_analyzed: 9
+  planning:
+    status: done
+    completed_at: "2026-05-29"
+    artifacts:
+      prd: "prd.md (1224 lignes)"
+      personas: "personas.md (5 personas)"
+      backlog: "backlog/ (6 EPICs, 43 User Stories)"
+    key_metrics:
+      epics: 6
+      user_stories: 43
+  design:
+    status: done
+    completed_at: "2026-05-29"
+    artifacts:
+      tech_spec: "tech-spec.md (4431 lignes)"
+      design_system: "architecture/design-system.md (1352 lignes)"
+      security: "architecture/security.md (989 lignes)"
+      adr: "docs/adr/ (5 ADR)"
+    key_decisions:
+      cms: "MDX + Git (ADR-002) — pas de SaaS, volonté client"
+      hosting: "Cloudflare Pages (ADR-003) — gratuit, EU, RGPD"
+      analytics: "Plausible cookieless (ADR-004) — 9€/mois"
+      geo: "Early adopter GEO (ADR-005) — llms.txt + answer-first"
+  implementation:
+    status: pending
+
+next_action: "Phase Implémentation — décomposer Sprint 1 et commencer le dev"
+next_command: "/workflow:implement"

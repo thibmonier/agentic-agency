@@ -5,7 +5,9 @@ import { ContactNotificationEmail } from "@/emails/contact-notification";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { verifyTurnstile } from "@/lib/turnstile";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResendClient() {
+  return new Resend(process.env.RESEND_API_KEY || "");
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -60,6 +62,7 @@ export async function POST(request: NextRequest) {
     const subject = `[Contact] ${sujetLabel} - ${data.nom} (${data.societe})`;
 
     // Send email via Resend
+    const resend = getResendClient();
     const { error } = await resend.emails.send({
       from: process.env.CONTACT_EMAIL_FROM || "onboarding@resend.dev",
       to: [process.env.CONTACT_EMAIL_TO || "contact@agentic-agency.fr"],

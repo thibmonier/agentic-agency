@@ -23,5 +23,6 @@ export interface ServicePageData {
     steps: Array<{ number: number; title: string; description: string }>;
   };
   technologies: string[];
+  technologiesLabel?: string;
   faq: Array<{ question: string; answer: string }>;
 }

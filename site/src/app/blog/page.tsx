@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "Blog - Agentic Agency",
   description:
     "Découvrez nos articles sur le delivery moderne, les bonnes pratiques de développement et nos retours d'expérience.",
+  alternates: {
+    types: {
+      "application/rss+xml": "/blog/rss.xml",
+    },
+  },
 };
 
 interface BlogPageProps {

@@ -107,10 +107,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/cgv"
+                  href="/cookies"
                   className="text-sm leading-6 text-gray-600 hover:text-[#1e3a5f] transition-colors"
                 >
-                  CGV
+                  Cookies
                 </Link>
               </li>
             </ul>

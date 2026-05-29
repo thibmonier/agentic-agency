@@ -1,271 +1,148 @@
-# Implémentation Sprint 1 - Walking Skeleton
+# Implémentation Sprint 1 & 2
 
-## Résumé
+## Sprint 2 — Accueil Complet + Infra
 
-Le Walking Skeleton (Sprint 1) du site Agentic Agency a été implémenté avec succès. Le site dispose d'une architecture complète et fonctionnelle, prête pour les prochains sprints.
+**Date** : 2026-05-29
+**Objectif** : La page d'accueil affiche les 13 sections complètes et le site est déployé sur Cloudflare Pages avec CI/CD.
 
-## User Stories Complétées
+### US Complétées
 
-### ✅ US-038 : Setup Next.js + TypeScript + Tailwind
-- Next.js 16.2.6 avec App Router
-- TypeScript 5 avec configuration stricte
-- Tailwind CSS 4 avec syntaxe moderne (`@import "tailwindcss"`, `@theme inline`)
+#### ✅ US-039 : Configuration Cloudflare Pages (3 pts)
+- Repo GitHub public : `thibmonier/agentic-agency`
+- Deploy via OpenNext Cloudflare adapter
+- URL : https://agentic-agency.thibaut-monier.workers.dev/
+- `wrangler.jsonc` + `open-next.config.ts` configurés
+- Deploy automatique sur push main
 
-### ✅ US-001 : Hero section accueil
-- H1 : "Livrez plus vite. Sans sacrifier la qualité."
-- Sous-titre : "Agence de développement web, applications métier et mobiles..."
-- CTA primaire : "Réserver un échange" → #contact
-- CTA secondaire : "Découvrir nos offres" → #offres
-- Design moderne avec dégradé décoratif
+#### ✅ US-040 : Pipeline CI/CD GitHub Actions (5 pts)
+- `.github/workflows/ci.yml` avec : lint, type-check, format-check, tests, build
+- Jest + React Testing Library configurés
+- Prettier configuré (`.prettierrc` + `.prettierignore`)
+- Lighthouse CI (warn-level, non-bloquant)
+- Branch protection rules sur main (PR obligatoire)
 
-### ✅ US-002 : Section indicateurs chiffrés
-4 blocs statistiques avec design soigné :
-- "11" — Stacks maîtrisées
-- "100%" — Code auditable
-- "+10" — Années d'expérience
-- "24-48h" — Délai de réponse
+#### ✅ US-005 : Section Offres — 4 piliers (5 pts)
+- `offers/offers-section.tsx` + `offer-pillar.tsx` + `offer-card.tsx`
+- 4 piliers : Dev web, Apps métier, Apps mobiles, Conseil
+- 10 cartes offre avec CTA "En savoir plus"
+- `src/data/offers.ts` données typées
 
-### ✅ Header + Footer
-**Header sticky :**
-- Logo "Agentic Agency"
-- Navigation desktop : Offres · Blog · Contact
-- CTA "Échanger sur votre projet"
-- Menu mobile hamburger avec Radix UI Dialog
-- Backdrop blur pour effet moderne
+#### ✅ US-004 : Section Delivery Moderne (3 pts)
+- `delivery-section.tsx` 2 colonnes (texte + visuel)
+- Timeline visuelle : Sprint → Review → Deploy → Monitor
+- CTA vers /blog
 
-**Footer :**
-- 4 colonnes : Services, Blog, Légal, Contact
-- Copyright dynamique avec année actuelle
-- Liens vers toutes les sections
+#### ✅ US-011 : Section Technologies — 11 stacks (2 pts)
+- `technologies-section.tsx` grille responsive
+- 11 stacks avec versions (Symfony 8.0, React 19, etc.)
+- Avatars couleur par catégorie (backend/frontend/mobile)
+- `src/data/technologies.ts`
 
-### ✅ US-018 : Setup MDX + 1 article
-- Configuration `@next/mdx` dans `next.config.ts`
-- `mdx-components.tsx` avec composants stylisés (h1, h2, h3, p, ul, ol, a, blockquote, code)
-- Bibliothèque MDX (`lib/mdx.ts`) avec :
-  - `getAllPosts()` - Liste tous les articles
-  - `getPostBySlug()` - Récupère un article par slug
-  - `getPostsByCategory()` - Filtre par catégorie
-  - Parsing frontmatter avec `gray-matter`
-  - Calcul temps de lecture avec `reading-time`
-- Article exemple : "Notre première expérience avec le delivery moderne"
+#### ✅ US-012 : Section Valeurs — 4 piliers (2 pts)
+- `values-section.tsx` grille 2×2
+- 4 valeurs : Fiabilité, Rigueur, Partenariat, Pragmatisme
+- Icônes SVG inline (shield, check-circle, users, target)
+- CTA "Parler de votre projet" → #contact
 
-### ✅ US-019 : Page liste blog
-- Route `/blog` avec liste des articles
-- Card par article avec :
-  - Titre, description, date
-  - Catégorie (badge)
-  - Auteur, temps de lecture
-  - Tags
-- Filtres par catégorie (Tous, Process, Avis, Tests)
-- Design responsive avec grid 3 colonnes (desktop) / 1 colonne (mobile)
+#### ✅ US-013 : Section Approche — Timeline 5 étapes (3 pts)
+- `approach-timeline.tsx` horizontal (desktop) / vertical (mobile)
+- 5 étapes : Discovery, Conception, Dev itératif, Recette, Transfert
+- CSS-only responsive (pas de JS)
+- Ligne de connexion visuelle
 
-### ✅ US-021 : Page article /blog/[slug]
-- Route dynamique `/blog/[slug]`
-- Import dynamique MDX
-- Metadata dynamique avec `generateMetadata`
-- `generateStaticParams` pour pré-générer les pages
-- Design prose avec typographie soignée
-- Bouton retour vers `/blog`
+#### ✅ US-006 : Bandeau CTA Milieu (1 pt)
+- `cta-banner.tsx` fond navy `#1e3a5f`
+- "Prêt à accélérer votre produit ?" + CTA blanc
+- Contraste WCAG AA
 
-## Fichiers Créés/Modifiés
+#### ✅ US-003 : Section Confiance Clients (2 pts)
+- `trust-section.tsx` 8 secteurs en badges
+- Fintech, Santé, Industrie, Retail, Logistique, Éducation, Immobilier, Assurance
+- Avatars première lettre
 
-### Configuration
-- ✅ `next.config.ts` - Config MDX ajoutée
-- ✅ `mdx-components.tsx` - Composants MDX personnalisés
+### Tests
 
-### Layout & Pages
-- ✅ `src/app/layout.tsx` - Modifié (Inter + Space Grotesk, Header + Footer, lang="fr")
-- ✅ `src/app/page.tsx` - Remplacé par Hero + Stats + placeholders
-- ✅ `src/app/globals.css` - Modifié (nouvelles fonts, couleurs, smooth scroll)
-- ✅ `src/app/blog/page.tsx` - Créé
-- ✅ `src/app/blog/[slug]/page.tsx` - Créé
+| Type | Suites | Tests | Statut |
+|------|--------|-------|--------|
+| Unit (Jest) | 8 | 34 | ✅ |
+| E2E (Playwright) | 1 | 7 | ✅ |
+| Lighthouse CI | - | 4 audits | ✅ (warn) |
 
-### Composants Layout
-- ✅ `src/components/layout/header.tsx` - Créé
-- ✅ `src/components/layout/footer.tsx` - Créé
+### Fichiers Créés (Sprint 2)
 
-### Composants Sections
-- ✅ `src/components/sections/hero.tsx` - Créé
-- ✅ `src/components/sections/stats.tsx` - Créé
+#### Composants sections
+- `src/components/sections/trust-section.tsx`
+- `src/components/sections/delivery-section.tsx`
+- `src/components/sections/offers/` (4 fichiers)
+- `src/components/sections/cta-banner.tsx`
+- `src/components/sections/technologies-section.tsx`
+- `src/components/sections/values-section.tsx`
+- `src/components/sections/approach-timeline.tsx`
 
-### Composants UI
-- ✅ `src/components/ui/button.tsx` - Créé (3 variants : primary, secondary, ghost)
+#### Données
+- `src/data/offers.ts`
+- `src/data/technologies.ts`
+- `src/data/values.ts`
+- `src/data/approach.ts`
+- `src/data/trust.ts`
 
-### Composants Blog
-- ✅ `src/components/blog/blog-card.tsx` - Créé
+#### Tests
+- `src/components/sections/__tests__/` (6 fichiers)
+- `src/components/sections/offers/__tests__/offers-section.test.tsx`
+- `tests/e2e/homepage.spec.ts`
 
-### Bibliothèque & Contenu
-- ✅ `src/lib/mdx.ts` - Créé (fonctions lecture MDX)
-- ✅ `src/content/blog/premiere-experience-delivery-moderne.mdx` - Créé
+#### Configuration
+- `.github/workflows/ci.yml`
+- `wrangler.jsonc`
+- `open-next.config.ts`
+- `.lighthouserc.json`
+- `.prettierrc` + `.prettierignore`
+- `jest.config.ts` + `jest.setup.ts`
+- `playwright.config.ts`
 
-### Documentation
-- ✅ `README.md` - Mis à jour avec documentation complète
+### Sections Page Accueil (ordre)
 
-## Vérifications Effectuées
+1. Hero ← Sprint 1
+2. Stats ← Sprint 1
+3. Confiance (US-003)
+4. Delivery (US-004)
+5. Offres (US-005)
+6. CTA milieu (US-006)
+7. Technologies (US-011)
+8. Valeurs (US-012)
+9. Approche (US-013)
+10. Contact (placeholder → Sprint 3)
 
-### Build Production ✅
-```bash
-npm run build
-```
-- ✓ Compilation TypeScript : 0 erreur
-- ✓ Génération pages statiques : 6/6
-- ✓ Routes générées :
-  - `/` (static)
-  - `/blog` (dynamic)
-  - `/blog/[slug]` (SSG)
-  - `/blog/premiere-experience-delivery-moderne` (pré-généré)
+---
 
-### Conformité Next.js 16 ✅
-- ✓ Doc officielle lue (`node_modules/next/dist/docs/`)
-- ✓ `next/font/google` avec Inter + Space Grotesk
-- ✓ App Router (pas Pages Router)
-- ✓ Metadata API (`generateMetadata`)
-- ✓ `params` async (Next.js 16)
-- ✓ `searchParams` async (Next.js 16)
+## Sprint 1 — Walking Skeleton
 
-### Accessibilité ✅
-- ✓ `lang="fr"` sur `<html>`
-- ✓ ARIA labels sur boutons menu mobile
-- ✓ Radix UI `VisuallyHidden` pour Dialog title/description
-- ✓ Balises sémantiques (`<header>`, `<footer>`, `<main>`, `<article>`, `<section>`)
+**Date** : 2026-05-29
+**Objectif** : Flux minimal complet de bout en bout.
 
-### Responsive Design ✅
-- ✓ Mobile-first avec Tailwind breakpoints
-- ✓ Menu mobile (Dialog) < 1024px
-- ✓ Grid colonnes adaptatives (1 col mobile → 3 cols desktop)
-- ✓ Padding/margin ajustés selon taille écran
+### US Complétées
 
-### SEO ✅
-- ✓ Metadata statique sur layout
-- ✓ Metadata dynamique sur articles (generateMetadata)
-- ✓ Balises `<time>` avec datetime
-- ✓ Structure HTML sémantique
+- ✅ US-038 : Setup Next.js 16 + TypeScript + Tailwind 4
+- ✅ US-001 : Hero section avec CTAs
+- ✅ US-002 : Section stats (4 indicateurs)
+- ✅ Header sticky + menu mobile (Radix UI Dialog)
+- ✅ Footer 4 colonnes
+- ✅ US-018 : MDX + article exemple
+- ✅ US-019 : Page liste blog avec filtres
+- ✅ US-021 : Page article dynamique /blog/[slug]
 
-## Tests Manuels Effectués
-
-1. **Page d'accueil**
-   - ✅ Hero section affichée correctement
-   - ✅ Stats section avec 4 blocs
-   - ✅ CTAs fonctionnels (liens vers #contact, #offres)
-   - ✅ Header sticky au scroll
-   - ✅ Footer visible en bas
-
-2. **Navigation**
-   - ✅ Liens Header vers Offres, Blog, Contact
-   - ✅ Menu mobile (Dialog) fonctionne
-   - ✅ Fermeture menu au clic sur lien
-   - ✅ Liens Footer vers toutes sections
-
-3. **Blog**
-   - ✅ `/blog` affiche l'article exemple
-   - ✅ Filtres catégories fonctionnels
-   - ✅ BlogCard cliquable vers article
-   - ✅ `/blog/premiere-experience-delivery-moderne` affiche l'article complet
-   - ✅ Bouton retour vers `/blog`
-
-4. **Responsive**
-   - ✅ Menu hamburger mobile < 1024px
-   - ✅ Grid adaptatif (1 → 3 colonnes)
-   - ✅ Textes lisibles mobile
-
-## Technologies Utilisées
+### Technologies
 
 | Technologie | Version | Usage |
 |-------------|---------|-------|
-| Next.js | 16.2.6 | Framework React SSR/SSG |
-| React | 19.2.4 | Bibliothèque UI |
-| TypeScript | 5 | Type safety |
-| Tailwind CSS | 4 | Styling utility-first |
-| @next/mdx | latest | Support MDX |
-| gray-matter | latest | Parse frontmatter |
-| reading-time | latest | Calcul temps lecture |
-| Radix UI | latest | Primitives UI accessibles |
-| Framer Motion | latest | Animations (prêt pour usage futur) |
-| clsx | latest | Gestion classes conditionnelles |
+| Next.js | 16.2.6 | Framework (App Router, OpenNext) |
+| React | 19.2.4 | UI |
+| TypeScript | 5 | Type safety (strict) |
+| Tailwind CSS | 4 | Styles |
+| Radix UI | latest | Primitives a11y |
+| Framer Motion | latest | Animations |
+| Jest | 30 | Tests unitaires |
+| Playwright | latest | Tests E2E |
+| OpenNext | 1.19.11 | Cloudflare adapter |
 
-## Prochaines Étapes (Sprints Suivants)
-
-### Sprint 2 - Offres
-- [ ] Section Offres détaillée avec 3 offres (Dev Web, Apps Métier, Apps Mobiles)
-- [ ] Cards offres avec détails
-- [ ] CTA vers formulaire contact
-
-### Sprint 3 - Contact
-- [ ] Formulaire de contact fonctionnel
-- [ ] Validation côté client
-- [ ] Intégration backend (email/API)
-
-### Sprint 4 - Contenu
-- [ ] Pages légales (Mentions légales, Confidentialité, CGV)
-- [ ] Plus d'articles de blog (10-15 articles)
-- [ ] Page À propos
-
-### Sprint 5 - SEO & Analytics
-- [ ] Sitemap.xml automatique
-- [ ] Robots.txt
-- [ ] OG images dynamiques
-- [ ] Google Analytics / Plausible
-- [ ] Performance optimizations (images, fonts)
-
-## Notes Techniques
-
-### Next.js 16 Specifics
-- **Params async** : `const { slug } = await params`
-- **SearchParams async** : `const { category } = await searchParams`
-- **Import dynamique MDX** : `await import(\`@/content/blog/\${slug}.mdx\`)`
-
-### Tailwind CSS 4 Syntax
-```css
-@import "tailwindcss";
-
-@theme inline {
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-space-grotesk);
-}
-```
-
-### Radix UI Dialog (Menu Mobile)
-- `Dialog.Root`, `Dialog.Trigger`, `Dialog.Portal`
-- `Dialog.Overlay` avec backdrop
-- `Dialog.Content` avec animations
-- `VisuallyHidden` pour titre/description (a11y)
-
-## Conformité Règles Projet
-
-✅ **Lis la doc Next.js 16** - Fait avant toute écriture de code
-✅ **Inter + Space_Grotesk** - Fonts configurées via `next/font/google`
-✅ **Tailwind CSS 4 syntax** - `@import "tailwindcss"`, `@theme inline`
-✅ **TypeScript strict** - Pas de `any`, typage explicite
-✅ **Server Components par défaut** - `"use client"` uniquement pour Header (Dialog)
-✅ **clsx pour classes conditionnelles** - Utilisé dans Button
-✅ **Couleurs sobres** - `#1e3a5f` bleu profond, gris, blanc
-✅ **Mobile-first responsive** - Breakpoints Tailwind
-✅ **lang="fr"** - HTML avec attribut lang français
-✅ **Pas de suppression** AGENTS.md/CLAUDE.md - Conservés
-
-## Build Final
-
-```
-Route (app)
-┌ ○ /                                    (Static)
-├ ○ /_not-found                          (Static)
-├ ƒ /blog                                (Dynamic)
-└ ● /blog/[slug]                         (SSG)
-  └ /blog/premiere-experience-delivery-moderne
-
-○  (Static)   prerendered as static content
-●  (SSG)      prerendered as static HTML (uses generateStaticParams)
-ƒ  (Dynamic)  server-rendered on demand
-```
-
-**Total routes : 4**
-**Pages pré-générées : 3**
-**Build time : ~4s**
-
-## Conclusion
-
-Le Walking Skeleton est **complet et fonctionnel**. Toutes les User Stories du Sprint 1 ont été implémentées avec succès. Le site est prêt pour les prochains sprints.
-
-**Date d'implémentation** : 2026-05-29
-**Développeur** : Claude Code (Sonnet 4.5)
 **Statut** : ✅ TERMINÉ

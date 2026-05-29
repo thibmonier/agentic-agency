@@ -17,6 +17,7 @@ jest.mock("resend", () => {
 
 import { POST } from "../route";
 import { NextRequest } from "next/server";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 // Mock the email component
 jest.mock("@/emails/contact-notification", () => ({
@@ -33,6 +34,8 @@ jest.mock("@/lib/turnstile", () => ({
   verifyTurnstile: jest.fn().mockResolvedValue({ success: true }),
 }));
 
+const mockCheckRateLimit = checkRateLimit as jest.MockedFunction<typeof checkRateLimit>;
+
 // Helper to create a mock NextRequest
 function createMockRequest(body: unknown): NextRequest {
   return new NextRequest("http://localhost:3000/api/contact", {
@@ -47,14 +50,12 @@ function createMockRequest(body: unknown): NextRequest {
 describe("POST /api/contact", () => {
   let mockSend: jest.Mock;
 
-  beforeEach(() => {
-    const resendModule = require("resend") as { __mockSend: jest.Mock };
+  beforeEach(async () => {
+    const resendModule = await import("resend") as unknown as { __mockSend: jest.Mock };
     mockSend = resendModule.__mockSend;
 
     jest.clearAllMocks();
-    // Reset rate limit mock to allow requests
-    const { checkRateLimit } = require("@/lib/rate-limit");
-    checkRateLimit.mockReturnValue({ allowed: true, remaining: 5 });
+    mockCheckRateLimit.mockReturnValue({ allowed: true, remaining: 5 });
     // Reset resend mock to success
     mockSend.mockResolvedValue({ data: { id: "test" }, error: null });
   });
@@ -212,8 +213,7 @@ describe("POST /api/contact", () => {
   });
 
   it("returns 429 when rate limited", async () => {
-    const { checkRateLimit } = require("@/lib/rate-limit");
-    checkRateLimit.mockReturnValueOnce({ allowed: false, remaining: 0 });
+    mockCheckRateLimit.mockReturnValueOnce({ allowed: false, remaining: 0 });
 
     const validData = {
       nom: "John Doe",

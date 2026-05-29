@@ -1,4 +1,4 @@
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ContactForm } from "../contact-form";
 
@@ -37,8 +37,7 @@ describe("ContactForm", () => {
     });
   });
 
-  it("validates email format", async () => {
-    const user = userEvent.setup();
+  it("validates email format", () => {
     render(<ContactForm />);
 
     // Just check that the email input has type="email" which triggers browser validation

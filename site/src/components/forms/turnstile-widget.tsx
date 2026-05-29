@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 
 interface TurnstileWidgetProps {
   onVerify: (token: string) => void;
@@ -23,11 +23,33 @@ export function TurnstileWidget({ onVerify }: TurnstileWidgetProps) {
   const scriptLoaded = useRef(false);
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
-  // Don't render if no site key (dev mode)
-  if (!siteKey) return null;
+  const renderWidget = useCallback(() => {
+    if (!containerRef.current || !window.turnstile || !siteKey) return;
+
+    if (widgetId.current) {
+      try {
+        window.turnstile?.remove(widgetId.current);
+      } catch {
+        // Ignore errors on remove
+      }
+    }
+
+    widgetId.current = window.turnstile.render(containerRef.current, {
+      sitekey: siteKey,
+      callback: (token: string) => {
+        onVerify(token);
+      },
+      "error-callback": () => {
+        console.error("Turnstile error");
+      },
+      theme: "light",
+      size: "normal",
+    });
+  }, [siteKey, onVerify]);
 
   useEffect(() => {
-    // Load Turnstile script
+    if (!siteKey) return;
+
     if (!scriptLoaded.current) {
       const script = document.createElement("script");
       script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
@@ -42,43 +64,18 @@ export function TurnstileWidget({ onVerify }: TurnstileWidgetProps) {
       renderWidget();
     }
 
-    function renderWidget() {
-      if (!containerRef.current || !window.turnstile) return;
-
-      // Remove existing widget if any
-      if (widgetId.current) {
-        try {
-          window.turnstile?.remove(widgetId.current);
-        } catch (e) {
-          // Ignore errors on remove
-        }
-      }
-
-      // Render new widget
-      widgetId.current = window.turnstile.render(containerRef.current, {
-        sitekey: siteKey,
-        callback: (token: string) => {
-          onVerify(token);
-        },
-        "error-callback": () => {
-          console.error("Turnstile error");
-        },
-        theme: "light",
-        size: "normal",
-      });
-    }
-
-    // Cleanup on unmount
     return () => {
       if (widgetId.current && window.turnstile) {
         try {
           window.turnstile.remove(widgetId.current);
-        } catch (e) {
+        } catch {
           // Ignore errors on remove
         }
       }
     };
-  }, [siteKey, onVerify]);
+  }, [siteKey, renderWidget]);
+
+  if (!siteKey) return null;
 
   return <div ref={containerRef} className="mt-4" />;
 }

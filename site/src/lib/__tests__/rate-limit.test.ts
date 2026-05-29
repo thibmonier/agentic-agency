@@ -66,11 +66,11 @@ describe("checkRateLimit", () => {
     }
 
     // IP1 should be blocked
-    let result1 = checkRateLimit(ip1);
+    const result1 = checkRateLimit(ip1);
     expect(result1.allowed).toBe(false);
 
     // IP2 should still be allowed
-    let result2 = checkRateLimit(ip2);
+    const result2 = checkRateLimit(ip2);
     expect(result2.allowed).toBe(true);
     expect(result2.remaining).toBe(9);
   });

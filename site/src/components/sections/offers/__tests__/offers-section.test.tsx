@@ -10,9 +10,7 @@ describe("OffersSection", () => {
 
   it("renders heading", () => {
     render(<OffersSection />);
-    expect(
-      screen.getByRole("heading", { level: 2, name: /nos offres/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 2, name: /nos offres/i })).toBeInTheDocument();
   });
 
   it("renders 4 pillar titles", () => {
@@ -48,9 +46,7 @@ describe("OfferCard", () => {
 
   it("renders title", () => {
     render(<OfferCard offer={mockOffer} />);
-    expect(
-      screen.getByRole("heading", { level: 4, name: /test offer/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 4, name: /test offer/i })).toBeInTheDocument();
   });
 
   it("renders description", () => {

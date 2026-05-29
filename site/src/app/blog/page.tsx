@@ -17,9 +17,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   const allPosts = await getAllPosts();
 
   const filteredPosts = category
-    ? allPosts.filter(
-        (post) => post.category.toLowerCase() === category.toLowerCase()
-      )
+    ? allPosts.filter((post) => post.category.toLowerCase() === category.toLowerCase())
     : allPosts;
 
   const categories = ["Tous", "Process", "Avis", "Tests"];
@@ -32,8 +30,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             Notre Blog
           </h1>
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            Découvrez nos articles sur le delivery moderne et les bonnes
-            pratiques de développement
+            Découvrez nos articles sur le delivery moderne et les bonnes pratiques de développement
           </p>
         </div>
 
@@ -41,8 +38,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         <div className="mt-16 flex justify-center gap-4 flex-wrap">
           {categories.map((cat) => {
             const isActive =
-              (!category && cat === "Tous") ||
-              category?.toLowerCase() === cat.toLowerCase();
+              (!category && cat === "Tous") || category?.toLowerCase() === cat.toLowerCase();
             return (
               <a
                 key={cat}
@@ -62,9 +58,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         {/* Liste des articles */}
         {filteredPosts.length === 0 ? (
           <div className="mt-16 text-center">
-            <p className="text-lg text-gray-600">
-              Aucun article trouvé pour cette catégorie.
-            </p>
+            <p className="text-lg text-gray-600">Aucun article trouvé pour cette catégorie.</p>
           </div>
         ) : (
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">

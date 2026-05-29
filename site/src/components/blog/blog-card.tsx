@@ -27,27 +27,18 @@ export function BlogCard({ post }: BlogCardProps) {
             {post.title}
           </Link>
         </h3>
-        <p className="mt-3 line-clamp-3 text-sm leading-6 text-gray-600">
-          {post.description}
-        </p>
+        <p className="mt-3 line-clamp-3 text-sm leading-6 text-gray-600">{post.description}</p>
       </div>
       <div className="relative mt-4 flex items-center gap-x-4">
         <div className="text-sm leading-6">
-          <p className="font-semibold text-gray-900">
-            {post.author}
-          </p>
-          <p className="text-gray-600">
-            {Math.ceil(post.readingTime)} min de lecture
-          </p>
+          <p className="font-semibold text-gray-900">{post.author}</p>
+          <p className="text-gray-600">{Math.ceil(post.readingTime)} min de lecture</p>
         </div>
       </div>
       {post.tags.length > 0 && (
         <div className="mt-4 flex flex-wrap gap-2">
           {post.tags.map((tag) => (
-            <span
-              key={tag}
-              className="text-xs text-gray-500"
-            >
+            <span key={tag} className="text-xs text-gray-500">
               #{tag}
             </span>
           ))}

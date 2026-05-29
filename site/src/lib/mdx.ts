@@ -17,8 +17,7 @@ export interface BlogPost {
   content: string;
 }
 
-export interface BlogPostMetadata
-  extends Omit<BlogPost, "content" | "readingTime"> {
+export interface BlogPostMetadata extends Omit<BlogPost, "content" | "readingTime"> {
   readingTime: number;
 }
 
@@ -82,11 +81,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   }
 }
 
-export async function getPostsByCategory(
-  category: string
-): Promise<BlogPostMetadata[]> {
+export async function getPostsByCategory(category: string): Promise<BlogPostMetadata[]> {
   const allPosts = await getAllPosts();
-  return allPosts.filter(
-    (post) => post.category.toLowerCase() === category.toLowerCase()
-  );
+  return allPosts.filter((post) => post.category.toLowerCase() === category.toLowerCase());
 }

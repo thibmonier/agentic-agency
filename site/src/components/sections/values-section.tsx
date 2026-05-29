@@ -100,9 +100,7 @@ export function ValuesSection() {
               return (
                 <div key={value.title} className="rounded-2xl bg-gray-50 p-8">
                   <IconComponent className="h-10 w-10 text-[#1e3a5f]" />
-                  <h3 className="mt-4 text-xl font-semibold text-[#1e3a5f]">
-                    {value.title}
-                  </h3>
+                  <h3 className="mt-4 text-xl font-semibold text-[#1e3a5f]">{value.title}</h3>
                   <p className="mt-2 text-gray-600">{value.description}</p>
                 </div>
               );

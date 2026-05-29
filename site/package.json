@@ -10,7 +10,8 @@
     "type-check": "tsc --noEmit",
     "format:check": "npx prettier --check \"src/**/*.{ts,tsx,css,md}\"",
     "test": "jest",
-    "test:ci": "jest --ci --coverage"
+    "test:ci": "jest --ci --coverage",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@jest/types": "^30.4.1",
     "@opennextjs/cloudflare": "^1.19.11",
+    "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
@@ -46,6 +48,7 @@
     "jest-environment-jsdom": "^30.4.1",
     "prettier": "^3.8.3",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "typescript": "^5",
     "wrangler": "^4.95.0"
   }

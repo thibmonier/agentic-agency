@@ -9,9 +9,7 @@ interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({
-  params,
-}: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
@@ -63,16 +61,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {post.title}
           </h1>
 
-          <p className="text-xl leading-8 text-gray-600 mb-6">
-            {post.description}
-          </p>
+          <p className="text-xl leading-8 text-gray-600 mb-6">{post.description}</p>
 
           <div className="flex items-center gap-x-4 text-sm border-t border-gray-200 pt-6">
             <span className="font-semibold text-gray-900">{post.author}</span>
             <span className="text-gray-500">·</span>
-            <span className="text-gray-500">
-              {Math.ceil(post.readingTime)} min de lecture
-            </span>
+            <span className="text-gray-500">{Math.ceil(post.readingTime)} min de lecture</span>
           </div>
 
           {post.tags.length > 0 && (

@@ -1,0 +1,23 @@
+# Notes
+
+
+## méthodologie
+
+cf double diamond + SDD
+
+remplacer ce qui est présent sur la home
+
+si nécessaire créer une page dédiée pour la réassurance
+
+phase de conception 
+double diamond + échange voiceover avec IA pour sortir specs
+potentiellement sortie d'un proto / POC à l'issue des ateliers de specs
+
+phase de design/archi/specs/us
+grooming + persona + concurrence + ADR
+backlog détaillé pour MVP/V1
+
+phase de dev
+iteration sur sprints MVP/V1
+cérémonies complètes
+point de démo

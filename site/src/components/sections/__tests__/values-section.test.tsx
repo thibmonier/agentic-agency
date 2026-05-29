@@ -9,25 +9,15 @@ describe("ValuesSection", () => {
 
   it("renders heading", () => {
     render(<ValuesSection />);
-    expect(
-      screen.getByRole("heading", { level: 2, name: /nos valeurs/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 2, name: /nos valeurs/i })).toBeInTheDocument();
   });
 
   it("renders 4 value cards", () => {
     render(<ValuesSection />);
-    expect(
-      screen.getByRole("heading", { level: 3, name: /fiabilité/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { level: 3, name: /rigueur/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { level: 3, name: /partenariat/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { level: 3, name: /pragmatisme/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 3, name: /fiabilité/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 3, name: /rigueur/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 3, name: /partenariat/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 3, name: /pragmatisme/i })).toBeInTheDocument();
   });
 
   it("renders CTA 'Parler de votre projet' linking to #contact", () => {

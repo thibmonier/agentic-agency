@@ -9,9 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold leading-6 text-[#1e3a5f]">
-              Services
-            </h3>
+            <h3 className="text-sm font-semibold leading-6 text-[#1e3a5f]">Services</h3>
             <ul className="mt-6 space-y-4">
               <li>
                 <Link
@@ -50,9 +48,7 @@ export function Footer() {
 
           {/* Blog */}
           <div>
-            <h3 className="text-sm font-semibold leading-6 text-[#1e3a5f]">
-              Blog
-            </h3>
+            <h3 className="text-sm font-semibold leading-6 text-[#1e3a5f]">Blog</h3>
             <ul className="mt-6 space-y-4">
               <li>
                 <Link
@@ -91,9 +87,7 @@ export function Footer() {
 
           {/* Légal */}
           <div>
-            <h3 className="text-sm font-semibold leading-6 text-[#1e3a5f]">
-              Légal
-            </h3>
+            <h3 className="text-sm font-semibold leading-6 text-[#1e3a5f]">Légal</h3>
             <ul className="mt-6 space-y-4">
               <li>
                 <Link
@@ -124,9 +118,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold leading-6 text-[#1e3a5f]">
-              Contact
-            </h3>
+            <h3 className="text-sm font-semibold leading-6 text-[#1e3a5f]">Contact</h3>
             <ul className="mt-6 space-y-4">
               <li>
                 <Link

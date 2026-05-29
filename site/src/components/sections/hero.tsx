@@ -10,8 +10,8 @@ export function Hero() {
             Livrez plus vite. Sans sacrifier la qualité.
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Agence de développement web, applications métier et mobiles. Pratiques
-            de delivery modernes pour des livrables fiables.
+            Agence de développement web, applications métier et mobiles. Pratiques de delivery
+            modernes pour des livrables fiables.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button asChild size="lg">

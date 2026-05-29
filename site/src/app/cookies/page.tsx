@@ -18,8 +18,8 @@ export default function CookiesPage() {
             {/* Introduction */}
             <section>
               <p>
-                Ce site utilise des cookies pour améliorer votre expérience de navigation et analyser
-                l&apos;utilisation du site.
+                Ce site utilise des cookies pour améliorer votre expérience de navigation et
+                analyser l&apos;utilisation du site.
               </p>
             </section>
 
@@ -59,9 +59,7 @@ export default function CookiesPage() {
 
             {/* Durées */}
             <section>
-              <h2 className="text-2xl font-semibold text-[#1e3a5f] mb-4">
-                Durée de conservation
-              </h2>
+              <h2 className="text-2xl font-semibold text-[#1e3a5f] mb-4">Durée de conservation</h2>
               <ul className="list-disc list-inside mt-4 space-y-2">
                 <li>Cookies de session : jusqu&apos;à la fermeture du navigateur</li>
                 <li>Cookies de préférences : 12 mois</li>
@@ -77,8 +75,8 @@ export default function CookiesPage() {
               <p>Vous pouvez gérer ou désactiver les cookies de plusieurs façons :</p>
               <ul className="list-disc list-inside mt-4 space-y-2">
                 <li>
-                  <strong>Via votre navigateur :</strong> La plupart des navigateurs vous permettent de
-                  refuser ou supprimer les cookies via les paramètres.
+                  <strong>Via votre navigateur :</strong> La plupart des navigateurs vous permettent
+                  de refuser ou supprimer les cookies via les paramètres.
                 </li>
                 <li>
                   <strong>Via notre bandeau cookies :</strong> Lors de votre première visite, vous

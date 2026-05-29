@@ -51,7 +51,7 @@ describe("POST /api/contact", () => {
   let mockSend: jest.Mock;
 
   beforeEach(async () => {
-    const resendModule = await import("resend") as unknown as { __mockSend: jest.Mock };
+    const resendModule = (await import("resend")) as unknown as { __mockSend: jest.Mock };
     mockSend = resendModule.__mockSend;
 
     jest.clearAllMocks();
@@ -105,8 +105,7 @@ describe("POST /api/contact", () => {
       email: "spam@example.com",
       societe: "Spam Corp",
       sujet: "autre",
-      message:
-        "This is a spam message with at least fifty characters to pass validation.",
+      message: "This is a spam message with at least fifty characters to pass validation.",
       consentement: true,
       honeypot: "spam-value", // Honeypot filled by bot
     };

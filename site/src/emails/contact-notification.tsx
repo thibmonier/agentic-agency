@@ -10,25 +10,10 @@ import {
   Link,
 } from "@react-email/components";
 import type { ContactFormData } from "@/lib/schemas/contact";
-import {
-  sujetLabels,
-  budgetLabels,
-  delaiLabels,
-  sourceLabels,
-} from "@/lib/schemas/contact";
+import { sujetLabels, budgetLabels, delaiLabels, sourceLabels } from "@/lib/schemas/contact";
 
 export function ContactNotificationEmail(props: ContactFormData) {
-  const {
-    nom,
-    email,
-    societe,
-    sujet,
-    message,
-    telephone,
-    budget,
-    delai,
-    source,
-  } = props;
+  const { nom, email, societe, sujet, message, telephone, budget, delai, source } = props;
 
   return (
     <Html>
@@ -103,9 +88,7 @@ export function ContactNotificationEmail(props: ContactFormData) {
                 {email}
               </Link>
             </Text>
-            <Text style={footerText}>
-              Reçu le {new Date().toLocaleString("fr-FR")}
-            </Text>
+            <Text style={footerText}>Reçu le {new Date().toLocaleString("fr-FR")}</Text>
           </Section>
         </Container>
       </Body>

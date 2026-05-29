@@ -3,7 +3,8 @@ import type { ServicePageData } from "./types";
 export const devWebData: ServicePageData = {
   slug: "developpement-web",
   title: "Développement web",
-  description: "Sites vitrines, plateformes SaaS et portails métier avec les frameworks les plus robustes.",
+  description:
+    "Sites vitrines, plateformes SaaS et portails métier avec les frameworks les plus robustes.",
   metaTitle: "Développement web sur mesure | Agentic Agency",
   metaDescription:
     "Développement de sites vitrines, plateformes SaaS et applications web sur mesure avec Symfony, Laravel, React et Next.js. Solutions performantes et évolutives.",

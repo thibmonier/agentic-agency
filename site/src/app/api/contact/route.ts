@@ -84,9 +84,6 @@ export async function POST(request: NextRequest) {
     );
   } catch (err) {
     console.error("Contact API error:", err);
-    return NextResponse.json(
-      { error: "Erreur serveur. Veuillez réessayer." },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Erreur serveur. Veuillez réessayer." }, { status: 500 });
   }
 }

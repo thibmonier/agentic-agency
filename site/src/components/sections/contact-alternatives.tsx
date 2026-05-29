@@ -66,15 +66,10 @@ export function ContactAlternatives() {
       <div className="flex items-start space-x-3">
         <CalendarIcon className="h-6 w-6 flex-shrink-0 text-[#1e3a5f]" />
         <div>
-          <Link
-            href="#"
-            className="font-medium text-[#1e3a5f] hover:text-[#4a7bb7]"
-          >
+          <Link href="#" className="font-medium text-[#1e3a5f] hover:text-[#4a7bb7]">
             Réserver un créneau
           </Link>
-          <p className="mt-1 text-sm text-gray-600">
-            Discutons de votre projet en visio
-          </p>
+          <p className="mt-1 text-sm text-gray-600">Discutons de votre projet en visio</p>
         </div>
       </div>
 
@@ -90,9 +85,7 @@ export function ContactAlternatives() {
           >
             Nous suivre sur LinkedIn
           </Link>
-          <p className="mt-1 text-sm text-gray-600">
-            Actualités et conseils tech
-          </p>
+          <p className="mt-1 text-sm text-gray-600">Actualités et conseils tech</p>
         </div>
       </div>
 
@@ -106,16 +99,12 @@ export function ContactAlternatives() {
           >
             contact@agentic-agency.fr
           </Link>
-          <p className="mt-1 text-sm text-gray-600">
-            Pour toute question directe
-          </p>
+          <p className="mt-1 text-sm text-gray-600">Pour toute question directe</p>
         </div>
       </div>
 
       {/* Response time */}
-      <p className="mt-8 text-sm text-gray-500">
-        Réponse sous 24-48h ouvrées
-      </p>
+      <p className="mt-8 text-sm text-gray-500">Réponse sous 24-48h ouvrées</p>
     </div>
   );
 }

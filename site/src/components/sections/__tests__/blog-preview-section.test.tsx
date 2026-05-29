@@ -9,13 +9,7 @@ jest.mock("@/lib/mdx", () => ({
 
 // Mock next/link
 jest.mock("next/link", () => {
-  return function MockLink({
-    children,
-    href,
-  }: {
-    children: React.ReactNode;
-    href: string;
-  }) {
+  return function MockLink({ children, href }: { children: React.ReactNode; href: string }) {
     return <a href={href}>{children}</a>;
   };
 });
@@ -66,7 +60,9 @@ describe("BlogPreviewSection", () => {
     const Component = await BlogPreviewSection();
     render(Component);
 
-    expect(screen.getByRole("heading", { level: 2, name: /notes de terrain/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { level: 2, name: /notes de terrain/i })
+    ).toBeInTheDocument();
     expect(screen.getByText("Article 1")).toBeInTheDocument();
     expect(screen.getByText("Article 2")).toBeInTheDocument();
     expect(screen.getByText("Article 3")).toBeInTheDocument();

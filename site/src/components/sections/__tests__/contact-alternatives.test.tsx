@@ -24,10 +24,7 @@ describe("ContactAlternatives", () => {
       name: /nous suivre sur linkedin/i,
     });
     expect(link).toBeInTheDocument();
-    expect(link).toHaveAttribute(
-      "href",
-      "https://linkedin.com/company/agentic-agency"
-    );
+    expect(link).toHaveAttribute("href", "https://linkedin.com/company/agentic-agency");
     expect(link).toHaveAttribute("target", "_blank");
     expect(link).toHaveAttribute("rel", "noopener noreferrer");
   });
@@ -51,14 +48,8 @@ describe("ContactAlternatives", () => {
     render(<ContactAlternatives />);
 
     // Check descriptions are present
-    expect(
-      screen.getByText(/discutons de votre projet en visio/i)
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(/actualités et conseils tech/i)
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(/pour toute question directe/i)
-    ).toBeInTheDocument();
+    expect(screen.getByText(/discutons de votre projet en visio/i)).toBeInTheDocument();
+    expect(screen.getByText(/actualités et conseils tech/i)).toBeInTheDocument();
+    expect(screen.getByText(/pour toute question directe/i)).toBeInTheDocument();
   });
 });

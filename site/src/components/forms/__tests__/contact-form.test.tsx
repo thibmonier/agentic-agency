@@ -33,7 +33,9 @@ describe("ContactForm", () => {
     await waitFor(() => {
       expect(screen.getByText(/le nom doit contenir au moins 2 caractères/i)).toBeInTheDocument();
       expect(screen.getByText(/adresse email invalide/i)).toBeInTheDocument();
-      expect(screen.getByText(/le nom de société doit contenir au moins 2 caractères/i)).toBeInTheDocument();
+      expect(
+        screen.getByText(/le nom de société doit contenir au moins 2 caractères/i)
+      ).toBeInTheDocument();
     });
   });
 
@@ -61,7 +63,9 @@ describe("ContactForm", () => {
     await user.click(screen.getByRole("button", { name: /envoyer/i }));
 
     await waitFor(() => {
-      expect(screen.getByText(/le message doit contenir au moins 50 caractères/i)).toBeInTheDocument();
+      expect(
+        screen.getByText(/le message doit contenir au moins 50 caractères/i)
+      ).toBeInTheDocument();
     });
   });
 
@@ -111,7 +115,9 @@ describe("ContactForm", () => {
 
     // Check success message
     await waitFor(() => {
-      expect(screen.getByText(/merci ! nous vous répondrons sous 24-48h ouvrées/i)).toBeInTheDocument();
+      expect(
+        screen.getByText(/merci ! nous vous répondrons sous 24-48h ouvrées/i)
+      ).toBeInTheDocument();
     });
 
     // Verify fetch was called
@@ -157,7 +163,9 @@ describe("ContactForm", () => {
 
     // Check error message
     await waitFor(() => {
-      expect(screen.getByText(/une erreur est survenue lors de l'envoi du formulaire/i)).toBeInTheDocument();
+      expect(
+        screen.getByText(/une erreur est survenue lors de l'envoi du formulaire/i)
+      ).toBeInTheDocument();
     });
   });
 

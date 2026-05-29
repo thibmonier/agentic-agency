@@ -32,7 +32,9 @@ export default function ConfidentialitePage() {
               <h2 className="text-2xl font-semibold text-[#1e3a5f] mb-4">
                 Finalités du traitement
               </h2>
-              <p>Nous collectons et traitons vos données personnelles pour les finalités suivantes :</p>
+              <p>
+                Nous collectons et traitons vos données personnelles pour les finalités suivantes :
+              </p>
               <ul className="list-disc list-inside mt-4 space-y-2">
                 <li>Traitement des demandes de contact via le formulaire</li>
                 <li>Amélioration de l&apos;expérience utilisateur (analytics)</li>
@@ -56,16 +58,14 @@ export default function ConfidentialitePage() {
             <section>
               <h2 className="text-2xl font-semibold text-[#1e3a5f] mb-4">Base légale</h2>
               <p>
-                Le traitement de vos données est fondé sur votre consentement (formulaire de contact)
-                et notre intérêt légitime (analytics pour améliorer le site).
+                Le traitement de vos données est fondé sur votre consentement (formulaire de
+                contact) et notre intérêt légitime (analytics pour améliorer le site).
               </p>
             </section>
 
             {/* Durées de conservation */}
             <section>
-              <h2 className="text-2xl font-semibold text-[#1e3a5f] mb-4">
-                Durées de conservation
-              </h2>
+              <h2 className="text-2xl font-semibold text-[#1e3a5f] mb-4">Durées de conservation</h2>
               <ul className="list-disc list-inside mt-4 space-y-2">
                 <li>Données du formulaire de contact : 12 mois</li>
                 <li>Données analytics : 24 mois</li>
@@ -76,8 +76,8 @@ export default function ConfidentialitePage() {
             <section>
               <h2 className="text-2xl font-semibold text-[#1e3a5f] mb-4">Vos droits</h2>
               <p>
-                Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez
-                des droits suivants :
+                Conformément au Règlement Général sur la Protection des Données (RGPD), vous
+                disposez des droits suivants :
               </p>
               <ul className="list-disc list-inside mt-4 space-y-2">
                 <li>Droit d&apos;accès à vos données personnelles</li>
@@ -104,8 +104,8 @@ export default function ConfidentialitePage() {
                 Contact du Délégué à la Protection des Données
               </h2>
               <p>
-                Pour toute question relative à la protection de vos données personnelles, vous pouvez
-                nous contacter à :{" "}
+                Pour toute question relative à la protection de vos données personnelles, vous
+                pouvez nous contacter à :{" "}
                 <a
                   href="mailto:contact@agentic-agency.fr"
                   className="text-[#1e3a5f] hover:underline"
@@ -122,8 +122,8 @@ export default function ConfidentialitePage() {
               </h2>
               <p>
                 Certains de nos prestataires (hébergement, analytics) peuvent être situés hors de
-                l&apos;Union Européenne. Dans ce cas, nous nous assurons que des garanties appropriées
-                sont mises en place conformément au RGPD.
+                l&apos;Union Européenne. Dans ce cas, nous nous assurons que des garanties
+                appropriées sont mises en place conformément au RGPD.
               </p>
             </section>
           </div>

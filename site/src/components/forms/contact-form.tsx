@@ -103,9 +103,7 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
           {...register("nom")}
           className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-[#4a7bb7] focus:outline-none focus:ring-1 focus:ring-[#4a7bb7]"
         />
-        {errors.nom && (
-          <p className="mt-1 text-sm text-red-600">{errors.nom.message}</p>
-        )}
+        {errors.nom && <p className="mt-1 text-sm text-red-600">{errors.nom.message}</p>}
       </div>
 
       {/* Email */}
@@ -119,9 +117,7 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
           {...register("email")}
           className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-[#4a7bb7] focus:outline-none focus:ring-1 focus:ring-[#4a7bb7]"
         />
-        {errors.email && (
-          <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
-        )}
+        {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
       </div>
 
       {/* Société */}
@@ -135,9 +131,7 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
           {...register("societe")}
           className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-[#4a7bb7] focus:outline-none focus:ring-1 focus:ring-[#4a7bb7]"
         />
-        {errors.societe && (
-          <p className="mt-1 text-sm text-red-600">{errors.societe.message}</p>
-        )}
+        {errors.societe && <p className="mt-1 text-sm text-red-600">{errors.societe.message}</p>}
       </div>
 
       {/* Sujet */}
@@ -157,9 +151,7 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
             </option>
           ))}
         </select>
-        {errors.sujet && (
-          <p className="mt-1 text-sm text-red-600">{errors.sujet.message}</p>
-        )}
+        {errors.sujet && <p className="mt-1 text-sm text-red-600">{errors.sujet.message}</p>}
       </div>
 
       {/* Message */}
@@ -174,9 +166,7 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
           className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-[#4a7bb7] focus:outline-none focus:ring-1 focus:ring-[#4a7bb7]"
           placeholder="Décrivez votre projet, vos besoins et vos objectifs (minimum 50 caractères)..."
         />
-        {errors.message && (
-          <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
-        )}
+        {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>}
       </div>
 
       {/* Collapsible Details Section */}
@@ -254,9 +244,7 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
                   </option>
                 ))}
               </select>
-              {errors.delai && (
-                <p className="mt-1 text-sm text-red-600">{errors.delai.message}</p>
-              )}
+              {errors.delai && <p className="mt-1 text-sm text-red-600">{errors.delai.message}</p>}
             </div>
 
             {/* Source */}

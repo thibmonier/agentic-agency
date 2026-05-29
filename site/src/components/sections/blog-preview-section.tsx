@@ -29,10 +29,7 @@ export async function BlogPreviewSection() {
         </div>
 
         <div className="mt-12 text-center">
-          <Link
-            href="/blog"
-            className="text-[#1e3a5f] hover:text-[#4a7bb7] font-semibold"
-          >
+          <Link href="/blog" className="text-[#1e3a5f] hover:text-[#4a7bb7] font-semibold">
             Tous les articles →
           </Link>
         </div>

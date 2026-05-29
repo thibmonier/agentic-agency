@@ -41,7 +41,9 @@ export default function MentionsLegalesPage() {
               <h2 className="text-2xl font-semibold text-[#1e3a5f] mb-4">
                 Directeur de la publication
               </h2>
-              <p>Le directeur de la publication du site est le représentant légal de Agentic Agency.</p>
+              <p>
+                Le directeur de la publication du site est le représentant légal de Agentic Agency.
+              </p>
             </section>
 
             {/* Hébergeur */}
@@ -58,7 +60,8 @@ export default function MentionsLegalesPage() {
             <section>
               <h2 className="text-2xl font-semibold text-[#1e3a5f] mb-4">Contact</h2>
               <p>
-                Pour toute question concernant le site, vous pouvez nous contacter à l&apos;adresse :{" "}
+                Pour toute question concernant le site, vous pouvez nous contacter à l&apos;adresse
+                :{" "}
                 <a
                   href="mailto:contact@agentic-agency.fr"
                   className="text-[#1e3a5f] hover:underline"

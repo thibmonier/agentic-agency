@@ -7,9 +7,7 @@ jest.mock("@/components/forms/contact-form", () => ({
 }));
 
 jest.mock("../contact-alternatives", () => ({
-  ContactAlternatives: () => (
-    <div data-testid="contact-alternatives">Alternatives</div>
-  ),
+  ContactAlternatives: () => <div data-testid="contact-alternatives">Alternatives</div>,
 }));
 
 describe("ContactSection", () => {

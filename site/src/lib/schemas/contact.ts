@@ -21,9 +21,9 @@ export type ContactFormData = z.infer<typeof contactSchema>;
 export const sujetLabels: Record<string, string> = {
   "developpement-web": "Développement web — site / plateforme / refonte",
   "application-metier": "Application métier — greenfield / évolution / intégration",
-  "mobile": "Mobile — Flutter / React Native / MVP",
-  "conseil": "Conseil — audit / équipe / formation",
-  "autre": "Autre",
+  mobile: "Mobile — Flutter / React Native / MVP",
+  conseil: "Conseil — audit / équipe / formation",
+  autre: "Autre",
 };
 
 export const budgetLabels: Record<string, string> = {
@@ -41,8 +41,8 @@ export const delaiLabels: Record<string, string> = {
 };
 
 export const sourceLabels: Record<string, string> = {
-  "google": "Recherche Google",
-  "linkedin": "LinkedIn",
-  "recommandation": "Recommandation",
-  "autre": "Autre",
+  google: "Recherche Google",
+  linkedin: "LinkedIn",
+  recommandation: "Recommandation",
+  autre: "Autre",
 };

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Agentic Agency",
     images: [
       {
-        url: "/og/default.png",
+        url: "/api/og",
         width: 1200,
         height: 627,
         alt: "Agentic Agency",

@@ -8,6 +8,7 @@ import { TechnologiesSection } from "@/components/sections/technologies-section"
 import { ValuesSection } from "@/components/sections/values-section";
 import { ApproachTimeline } from "@/components/sections/approach-timeline";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { ProjectsSection } from "@/components/sections/projects-section";
 import { BlogPreviewSection } from "@/components/sections/blog-preview-section";
 import { ContactSection } from "@/components/sections/contact-section";
 
@@ -24,6 +25,7 @@ export default function Home() {
       <ValuesSection />
       <ApproachTimeline />
       <TestimonialsSection />
+      <ProjectsSection />
       <BlogPreviewSection />
       <ContactSection />
     </>

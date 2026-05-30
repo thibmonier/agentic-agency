@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: devWebData.metaTitle,
     description: devWebData.metaDescription,
+    images: [
+      {
+        url: `/api/og?title=${encodeURIComponent(devWebData.title)}&type=service`,
+        width: 1200,
+        height: 627,
+      },
+    ],
   },
 };
 

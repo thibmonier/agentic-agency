@@ -4,6 +4,11 @@ export const metadata: Metadata = {
   title: "Mentions légales | Agentic Agency",
   description:
     "Mentions légales de Agentic Agency, agence de développement web et applications métier.",
+  openGraph: {
+    title: "Mentions légales | Agentic Agency",
+    description:
+      "Mentions légales de Agentic Agency, agence de développement web et applications métier.",
+  },
 };
 
 export default function MentionsLegalesPage() {

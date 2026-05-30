@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Politique de cookies | Agentic Agency",
   description: "Politique d'utilisation des cookies sur le site Agentic Agency.",
+  openGraph: {
+    title: "Politique de cookies | Agentic Agency",
+    description: "Politique d'utilisation des cookies sur le site Agentic Agency.",
+  },
 };
 
 export default function CookiesPage() {

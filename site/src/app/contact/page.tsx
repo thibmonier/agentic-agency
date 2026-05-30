@@ -4,6 +4,10 @@ import { ContactForm } from "@/components/forms/contact-form";
 export const metadata: Metadata = {
   title: "Contact | Agentic Agency",
   description: "Contactez Agentic Agency pour discuter de votre projet digital.",
+  openGraph: {
+    title: "Contact | Agentic Agency",
+    description: "Contactez Agentic Agency pour discuter de votre projet digital.",
+  },
 };
 
 export default async function ContactPage({

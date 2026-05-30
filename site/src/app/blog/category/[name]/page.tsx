@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getPostsByCategory } from "@/lib/mdx";
 import { BlogCard } from "@/components/blog/blog-card";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-jsonld";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -45,6 +46,10 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   return {
     title: `${cat.title} | Blog Agentic Agency`,
     description: cat.description,
+    openGraph: {
+      title: `${cat.title} | Blog Agentic Agency`,
+      description: cat.description,
+    },
   };
 }
 
@@ -57,6 +62,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   const cat = CATEGORIES[name];
   const posts = await getPostsByCategory(name);
+
+  const breadcrumbItems = [
+    { name: "Accueil", href: "/" },
+    { name: "Blog", href: "/blog" },
+    { name: cat.title },
+  ];
 
   return (
     <div className="bg-white py-24 sm:py-32">
@@ -105,6 +116,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           </div>
         )}
       </div>
+
+      <BreadcrumbJsonLd items={breadcrumbItems} />
     </div>
   );
 }

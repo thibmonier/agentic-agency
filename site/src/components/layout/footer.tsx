@@ -4,9 +4,12 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-gray-200 bg-white">
+    <footer className="border-t border-gray-200 bg-white" aria-label="Pied de page">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <nav
+          className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
+          aria-label="Navigation pied de page"
+        >
           {/* Services */}
           <div>
             <h3 className="text-sm font-semibold leading-6 text-[#1e3a5f]">Services</h3>
@@ -146,7 +149,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
-        </div>
+        </nav>
 
         <div className="mt-12 border-t border-gray-200 pt-8">
           <p className="text-center text-sm leading-6 text-gray-600">

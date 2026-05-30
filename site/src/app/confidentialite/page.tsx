@@ -4,6 +4,11 @@ export const metadata: Metadata = {
   title: "Politique de confidentialité | Agentic Agency",
   description:
     "Politique de confidentialité et protection des données personnelles de Agentic Agency.",
+  openGraph: {
+    title: "Politique de confidentialité | Agentic Agency",
+    description:
+      "Politique de confidentialité et protection des données personnelles de Agentic Agency.",
+  },
 };
 
 export default function ConfidentialitePage() {

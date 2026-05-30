@@ -32,6 +32,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
+      images: [
+        {
+          url: `/api/og?title=${encodeURIComponent(post.title)}&type=article`,
+          width: 1200,
+          height: 627,
+        },
+      ],
     },
   };
 }

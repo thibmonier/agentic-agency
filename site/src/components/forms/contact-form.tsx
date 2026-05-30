@@ -66,7 +66,11 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
 
   if (submitState === "success") {
     return (
-      <div className="rounded-lg border border-green-200 bg-green-50 p-6 text-center">
+      <div
+        className="rounded-lg border border-green-200 bg-green-50 p-6 text-center"
+        role="status"
+        aria-live="polite"
+      >
         <div className="text-lg font-semibold text-green-800">
           Merci ! Nous vous répondrons sous 24-48h ouvrées.
         </div>
@@ -87,6 +91,7 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
       <input
         type="text"
         {...register("honeypot")}
+        aria-label="Leave this field empty"
         className="hidden"
         tabIndex={-1}
         autoComplete="off"
@@ -101,9 +106,16 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
           type="text"
           id="nom"
           {...register("nom")}
+          aria-required="true"
+          aria-invalid={!!errors.nom}
+          aria-describedby={errors.nom ? "nom-error" : undefined}
           className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-[#4a7bb7] focus:outline-none focus:ring-1 focus:ring-[#4a7bb7]"
         />
-        {errors.nom && <p className="mt-1 text-sm text-red-600">{errors.nom.message}</p>}
+        {errors.nom && (
+          <p id="nom-error" className="mt-1 text-sm text-red-600">
+            {errors.nom.message}
+          </p>
+        )}
       </div>
 
       {/* Email */}
@@ -115,9 +127,16 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
           type="email"
           id="email"
           {...register("email")}
+          aria-required="true"
+          aria-invalid={!!errors.email}
+          aria-describedby={errors.email ? "email-error" : undefined}
           className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-[#4a7bb7] focus:outline-none focus:ring-1 focus:ring-[#4a7bb7]"
         />
-        {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
+        {errors.email && (
+          <p id="email-error" className="mt-1 text-sm text-red-600">
+            {errors.email.message}
+          </p>
+        )}
       </div>
 
       {/* Société */}
@@ -129,9 +148,16 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
           type="text"
           id="societe"
           {...register("societe")}
+          aria-required="true"
+          aria-invalid={!!errors.societe}
+          aria-describedby={errors.societe ? "societe-error" : undefined}
           className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-[#4a7bb7] focus:outline-none focus:ring-1 focus:ring-[#4a7bb7]"
         />
-        {errors.societe && <p className="mt-1 text-sm text-red-600">{errors.societe.message}</p>}
+        {errors.societe && (
+          <p id="societe-error" className="mt-1 text-sm text-red-600">
+            {errors.societe.message}
+          </p>
+        )}
       </div>
 
       {/* Sujet */}
@@ -142,6 +168,9 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
         <select
           id="sujet"
           {...register("sujet")}
+          aria-required="true"
+          aria-invalid={!!errors.sujet}
+          aria-describedby={errors.sujet ? "sujet-error" : undefined}
           className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-[#4a7bb7] focus:outline-none focus:ring-1 focus:ring-[#4a7bb7]"
         >
           <option value="">Sélectionnez un sujet</option>
@@ -151,7 +180,11 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
             </option>
           ))}
         </select>
-        {errors.sujet && <p className="mt-1 text-sm text-red-600">{errors.sujet.message}</p>}
+        {errors.sujet && (
+          <p id="sujet-error" className="mt-1 text-sm text-red-600">
+            {errors.sujet.message}
+          </p>
+        )}
       </div>
 
       {/* Message */}
@@ -163,10 +196,17 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
           id="message"
           rows={6}
           {...register("message")}
+          aria-required="true"
+          aria-invalid={!!errors.message}
+          aria-describedby={errors.message ? "message-error" : undefined}
           className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-[#4a7bb7] focus:outline-none focus:ring-1 focus:ring-[#4a7bb7]"
           placeholder="Décrivez votre projet, vos besoins et vos objectifs (minimum 50 caractères)..."
         />
-        {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>}
+        {errors.message && (
+          <p id="message-error" className="mt-1 text-sm text-red-600">
+            {errors.message.message}
+          </p>
+        )}
       </div>
 
       {/* Collapsible Details Section */}
@@ -296,7 +336,11 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
 
       {/* Error message */}
       {submitState === "error" && (
-        <div className="rounded-lg border border-red-200 bg-red-50 p-4">
+        <div
+          className="rounded-lg border border-red-200 bg-red-50 p-4"
+          role="alert"
+          aria-live="polite"
+        >
           <p className="text-sm text-red-800">
             Une erreur est survenue lors de l&apos;envoi du formulaire. Veuillez réessayer.
           </p>

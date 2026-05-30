@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { JsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-jsonld";
+import { ShareButton } from "@/components/blog/share-button";
 import type { Metadata } from "next";
 
 interface BlogPostPageProps {
@@ -22,6 +25,14 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return {
     title: `${post.title} - Blog Agentic Agency`,
     description: post.description,
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.description,
+      publishedTime: post.date,
+      authors: [post.author],
+      tags: post.tags,
+    },
   };
 }
 
@@ -39,6 +50,30 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   if (!post) {
     notFound();
   }
+
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    author: {
+      "@type": "Organization",
+      name: "Agentic Agency",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Agentic Agency",
+      url: "https://agentic-agency.fr",
+    },
+    mainEntityOfPage: `https://agentic-agency.fr/blog/${slug}`,
+  };
+
+  const breadcrumbItems = [
+    { name: "Accueil", href: "/" },
+    { name: "Blog", href: "/blog" },
+    { name: post.title },
+  ];
 
   return (
     <article className="bg-white py-16 sm:py-24">
@@ -78,18 +113,26 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               ))}
             </div>
           )}
+
+          <div className="mt-6">
+            <ShareButton url={`https://agentic-agency.fr/blog/${slug}`} title={post.title} />
+          </div>
         </header>
 
         <div className="prose prose-lg prose-gray max-w-none">
           <MDXRemote source={post.content} />
         </div>
 
-        <div className="mt-12 pt-12 border-t border-gray-200">
+        <div className="mt-12 pt-12 border-t border-gray-200 flex items-center justify-between">
           <Button asChild variant="ghost">
             <Link href="/blog">← Retour au blog</Link>
           </Button>
+          <ShareButton url={`https://agentic-agency.fr/blog/${slug}`} title={post.title} />
         </div>
       </div>
+
+      <JsonLd data={blogPostingSchema} />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
     </article>
   );
 }
